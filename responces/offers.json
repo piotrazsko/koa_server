@@ -1,0 +1,35 @@
+[
+  {
+    "title": "test offer",
+    "subtitle": "Permanent exchibition",
+    "id": 1,
+    "message": "Start your visit to the European Parliament in Brussels at Station Europe, on the lively Place du Luxembourg. Whether you’re just curious or know exactly what you want to see, Station Europe has all the information you need to make the most of your visit.",
+    "city": "Brussel",
+    "duration": 40,
+    "group_size": "10-15",
+    "free_tickets": 12,
+    "image": "https://images.unsplash.com/photo-1542293787938-c9e299b880cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "duration": 120,
+    "subtitle": "",
+    "group_size": "10-15",
+    "title": "test offer 2",
+    "id": 2,
+    "message": "Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ipsum 2",
+    "city": "Brussel",
+    "free_tickets": 12,
+    "image": "https://images.unsplash.com/photo-1542332496-0d461337bddf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "duration": 120,
+    "subtitle": "Permanent exchibition",
+    "group_size": "10-15",
+    "title": "test offer 3",
+    "id": 3,
+    "message": "Lorem ipsum 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "city": "Brussel",
+    "free_tickets": 12,
+    "image": "https://images.unsplash.com/photo-1542332496-0d461337bddf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+  }
+]
