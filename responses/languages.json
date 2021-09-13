@@ -1,0 +1,5 @@
+[
+  { "iso": "gb", "name": "English", "lang": "en" },
+  { "iso": "de", "name": "German", "lang": "de" },
+  { "iso": "es", "name": "Spanish", "lang": "es" }
+]

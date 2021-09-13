@@ -2,9 +2,14 @@
 const logger = require("koa-logger");
 const router = require("@koa/router")();
 const koaBody = require("koa-body");
-const cities = require("./Responses/cities.json");
-const offers = require("./Responses/offers.json");
-const featuredOffers = require("./Responses/featuredOffers.json");
+const cities = require("./responses/cities.json");
+const offers = require("./responses/offers.json");
+const featuredOffers = require("./responses/offers.json");
+const notifications = require("./responses/notifications.json");
+const history = require("./responses/history.json");
+const upcoming = require("./responses/upcoming.json");
+const languages = require("./responses/languages.json");
+
 const Koa = require("koa");
 const app = (module.exports = new Koa());
 
@@ -24,13 +29,17 @@ app.use(koaBody());
 
 router
   .get("/", listResponse)
+  .get("/notifications", notificationsResponse)
+  .get("/history-visits", historyResponse)
+  .get("/upcoming-visits", upcomingResponse)
   .get("/cities", citiesResponse)
   .get("/posts", listResponse)
   .get("/posts", listResponse)
   .get("/featured-offers", featuredOffersResponse)
   .get("/offers", offersResponse)
   .get("/offers-details/:id", offerDetailsResponse)
-  .post("book-visit", bookVisitResponse);
+  .post("/book-visit", bookVisitResponse)
+  .get("/languages", languagesResponse);
 
 app.use(router.routes());
 
@@ -41,10 +50,23 @@ app.use(router.routes());
 async function listResponse(ctx) {
   ctx.body = { message: "Covid 19: update for visitors" };
 }
+async function notificationsResponse(ctx) {
+  ctx.body = notifications;
+}
+async function historyResponse(ctx) {
+  ctx.body = history;
+}
+async function upcomingResponse(ctx) {
+  ctx.body = upcoming;
+}
 async function citiesResponse(ctx) {
   ctx.body = cities;
 }
+async function languagesResponse(ctx) {
+  ctx.body = languages;
+}
 async function bookVisitResponse(ctx) {
+  console.log(ctx, ctx.params);
   ctx.body = {
     status: "confirmed",
   };
