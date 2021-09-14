@@ -36,6 +36,8 @@ app.use(koaBody());
 
 router
   .get("/", listResponse)
+  .get("/user", getUserResponse)
+  .post("/user", getUserResponse)
   .get("/notifications", notificationsResponse)
   .get("/history-visits", historyResponse)
   .get("/upcoming-visits", upcomingResponse)
@@ -59,6 +61,15 @@ app.use(router.routes());
  * Post listing.
  */
 
+const user = {};
+
+async function getUserResponse(ctx) {
+  ctx.body = user;
+}
+async function postUserResponse(ctx) {
+  console.log(ctx);
+  ctx.body = user;
+}
 async function listResponse(ctx) {
   ctx.body = { message: "Covid 19: update for visitors" };
 }
