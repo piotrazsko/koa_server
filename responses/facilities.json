@@ -1,0 +1,48 @@
+[
+  {
+    "status": "attended",
+    "title": "House of European History",
+    "subtitle": "Permanent exchibition",
+    "id": 1,
+    "message": "Start your visit to the European Parliament in Brussels at Station Europe, on the lively Place du Luxembourg. Whether you’re just curious or know exactly what you want to see, Station Europe has all the information you need to make the most of your visit.",
+    "full_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatet non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "city": "Brussel",
+    "duration": 40,
+    "group_size": "10-15",
+    "group_language": { "iso": "en", "lang": "english" },
+    "languages": 12,
+    "date": "27.09.2021",
+    "image": "https://cdn.pixabay.com/photo/2012/06/19/10/32/owl-50267_960_720.jpg"
+  },
+  {
+    "title": "Parlamentarium",
+    "status": "no_show",
+    "duration": 120,
+    "full_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatet non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "subtitle": "",
+    "group_size": "10-15",
+    "id": 2,
+    "message": "Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatet non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ipsum 2",
+    "city": "Brussel",
+    "languages": 12,
+    "group_language": { "iso": "en", "lang": "english" },
+
+    "date": "30.09.2021",
+    "image": "https://cdn.pixabay.com/photo/2021/07/21/07/09/cygnet-6482420_960_720.jpg"
+  },
+  {
+    "title": "Canceled Event #3",
+    "subtitle": "Permanent exchibition",
+    "status": "rejected",
+    "full_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatet non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "duration": 180,
+    "group_size": "10-15",
+    "id": 3,
+    "group_language": { "iso": "en", "lang": "english" },
+    "message": "Lorem ipsum 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatet non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "city": "Brussel",
+    "languages": 17,
+    "date": "28.09.2021",
+    "image": "https://cdn.pixabay.com/photo/2021/07/03/20/58/church-6384849_960_720.jpg"
+  }
+]

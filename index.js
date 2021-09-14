@@ -8,7 +8,14 @@ const featuredOffers = require("./responses/offers.json");
 const notifications = require("./responses/notifications.json");
 const history = require("./responses/history.json");
 const upcoming = require("./responses/upcoming.json");
+
+//more
 const languages = require("./responses/languages.json");
+const external_data = require("./responses/external_data.json");
+const term_of_use = require("./responses/term_of_use.json");
+const privacy = require("./responses/privacy_policy.json");
+const about_app = require("./responses/about_app.json");
+const facilities = require("./responses/facilities.json");
 
 const Koa = require("koa");
 const app = (module.exports = new Koa());
@@ -39,7 +46,12 @@ router
   .get("/offers", offersResponse)
   .get("/offers-details/:id", offerDetailsResponse)
   .post("/book-visit", bookVisitResponse)
-  .get("/languages", languagesResponse);
+  .get("/languages", languagesResponse)
+  .get("/about-app", aboutAppResponse)
+  .get("/privacy-policy", privacyResponse)
+  .get("/terms-of-use", termOfUseResponse)
+  .get("/external-data", extternalResponse)
+  .get("/facilities", facilitiesResponse);
 
 app.use(router.routes());
 
@@ -65,6 +77,22 @@ async function citiesResponse(ctx) {
 async function languagesResponse(ctx) {
   ctx.body = languages;
 }
+async function aboutAppResponse(ctx) {
+  ctx.body = about_app;
+}
+async function privacyResponse(ctx) {
+  ctx.body = privacy;
+}
+async function termOfUseResponse(ctx) {
+  ctx.body = term_of_use;
+}
+async function extternalResponse(ctx) {
+  ctx.body = external_data;
+}
+async function facilitiesResponse(ctx) {
+  ctx.body = facilities;
+}
+
 async function bookVisitResponse(ctx) {
   console.log(ctx, ctx.params);
   ctx.body = {
@@ -76,7 +104,7 @@ async function offersResponse(ctx) {
     setTimeout(() => {
       ctx.body = offers;
       resolve();
-    }, 2000);
+    }, 1000);
   });
 }
 
