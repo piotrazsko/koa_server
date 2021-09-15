@@ -1,4 +1,5 @@
 // const render = require('./lib/render');
+// const bodyParser = require("koa-bodyparser");
 const logger = require("koa-logger");
 const router = require("@koa/router")();
 const koaBody = require("koa-body");
@@ -16,7 +17,6 @@ const term_of_use = require("./responses/term_of_use.json");
 const privacy = require("./responses/privacy_policy.json");
 const about_app = require("./responses/about_app.json");
 const facilities = require("./responses/facilities.json");
-
 const Koa = require("koa");
 const app = (module.exports = new Koa());
 
@@ -26,6 +26,7 @@ const posts = [];
 
 // middleware
 
+// app.use(bodyParser());
 app.use(logger());
 
 // app.use(render);
@@ -36,8 +37,11 @@ app.use(koaBody());
 
 router
   .get("/", listResponse)
-  .get("/user", getUserResponse)
-  .post("/user", getUserResponse)
+  .get("/user/:id", getUserResponse)
+  .get("/users", getUsersResponse)
+  .put("/user/:id", putUserResponse)
+  .delete("/user/:id", deleteUserResponse)
+  .post("/user", postUserResponse)
   .get("/notifications", notificationsResponse)
   .get("/history-visits", historyResponse)
   .get("/upcoming-visits", upcomingResponse)
@@ -61,15 +65,35 @@ app.use(router.routes());
  * Post listing.
  */
 
-const user = {};
+let users = [{ id: 0, user: "Nadya", data: "10.10.2021" }];
 
+async function getUsersResponse(ctx) {
+  // console.log(ctx.params);
+  ctx.body = users;
+}
 async function getUserResponse(ctx) {
-  ctx.body = user;
+  // console.log(ctx.params);
+  ctx.body = users.find((item) => item.id == ctx.params.id);
 }
+
 async function postUserResponse(ctx) {
-  console.log(ctx);
-  ctx.body = user;
+  users.push({ id: users.length, ...ctx.request.body });
+  ctx.body = users;
 }
+
+async function putUserResponse(ctx) {
+  users = users.map((item) => {
+    return item.id == ctx.params.id ? { ...item, ...ctx.request.body } : item;
+  });
+  ctx.body = users;
+}
+async function deleteUserResponse(ctx) {
+  users = users.filter((item) => {
+    return item.id != ctx.params.id;
+  });
+  ctx.body = users;
+}
+
 async function listResponse(ctx) {
   ctx.body = { message: "Covid 19: update for visitors" };
 }
