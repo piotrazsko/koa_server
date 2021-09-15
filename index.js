@@ -65,7 +65,10 @@ app.use(router.routes());
  * Post listing.
  */
 
-let users = [{ id: 0, user: "Nadya", data: "10.10.2021" }];
+let users = [
+  { id: 0, user: "Nadya", data: "10.10.2021" },
+  { id: 1, user: "Serj", data: "10.10.2021" },
+];
 
 async function getUsersResponse(ctx) {
   // console.log(ctx.params);
