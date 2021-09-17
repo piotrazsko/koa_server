@@ -1,5 +1,3 @@
-// const render = require('./lib/render');
-// const bodyParser = require("koa-bodyparser");
 const logger = require("koa-logger");
 const router = require("@koa/router")();
 const koaBody = require("koa-body");
@@ -17,6 +15,12 @@ const term_of_use = require("./responses/term_of_use.json");
 const privacy = require("./responses/privacy_policy.json");
 const about_app = require("./responses/about_app.json");
 const facilities = require("./responses/facilities.json");
+const {
+  groupLanguagesResponce,
+  groupSizesResponce,
+} = require("./controllers/selects");
+console.log(groupLanguagesResponce);
+
 const Koa = require("koa");
 const app = (module.exports = new Koa());
 
@@ -37,6 +41,8 @@ app.use(koaBody());
 
 router
   .get("/", listResponse)
+  .post("/auth", authResponse)
+  .post("/register", registerResponse)
   .get("/user/:id", getUserResponse)
   .get("/users", getUsersResponse)
   .put("/user/:id", putUserResponse)
@@ -57,7 +63,10 @@ router
   .get("/privacy-policy", privacyResponse)
   .get("/terms-of-use", termOfUseResponse)
   .get("/external-data", extternalResponse)
-  .get("/facilities", facilitiesResponse);
+  .get("/facilities", facilitiesResponse)
+  // selects
+  .get("/group-languages", groupLanguagesResponce)
+  .get("/group-sizes", groupSizesResponce);
 
 app.use(router.routes());
 
@@ -66,9 +75,21 @@ app.use(router.routes());
  */
 
 let users = [
-  { id: 0, user: "Nadya", data: "10.10.2021" },
-  { id: 1, user: "Serj", data: "10.10.2021" },
+  { id: 0, firts_name: "John", last_name: "Gold", data: "10.10.2021" },
+  { id: 1, firts_name: "Jack", last_name: "Daniels", data: "10.10.2021" },
 ];
+
+//auth
+
+async function registerResponse(ctx) {
+  ctx.body = users;
+}
+
+async function authResponse(ctx) {
+  ctx.body = users;
+}
+
+// user/
 
 async function getUsersResponse(ctx) {
   // console.log(ctx.params);
@@ -76,7 +97,10 @@ async function getUsersResponse(ctx) {
 }
 async function getUserResponse(ctx) {
   // console.log(ctx.params);
-  ctx.body = users.find((item) => item.id == ctx.params.id);
+  ctx.body =
+    users.find((item) => item.id == ctx.params.id) || !ctx.params.id
+      ? users[0]
+      : ctx.throw(400, "Error Message");
 }
 
 async function postUserResponse(ctx) {
@@ -137,6 +161,7 @@ async function bookVisitResponse(ctx) {
     status: "confirmed",
   };
 }
+
 async function offersResponse(ctx) {
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
@@ -151,7 +176,7 @@ async function offerDetailsResponse(ctx) {
     setTimeout(() => {
       ctx.body = offers.find((i) => i.id == ctx.params.id);
       resolve();
-    }, 2000);
+    }, 1000);
   });
 }
 
