@@ -1,6 +1,7 @@
 const group_languages = require("./group_languages.json");
 const groupSizes = require("./group_sizes.json");
 const cities = require("./cities.json");
+const facilities = require("./facilities.json");
 
 module.exports = {
   groupLanguagesResponce: async function (ctx) {
@@ -11,5 +12,8 @@ module.exports = {
   },
   citiesResponce: async function (ctx) {
     ctx.body = cities;
+  },
+  falilitiesListResponce: async function (ctx) {
+    ctx.body = facilities;
   },
 };

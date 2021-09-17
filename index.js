@@ -18,6 +18,7 @@ const {
   groupLanguagesResponce,
   groupSizesResponce,
   citiesResponce,
+  falilitiesListResponce,
 } = require("./controllers/selects");
 
 const Koa = require("koa");
@@ -64,6 +65,7 @@ router
   .get("/facilities", facilitiesResponse)
   // selects
   .get("/cities", citiesResponce)
+  .get("/facilities-list", falilitiesListResponce)
   .get("/group-languages", groupLanguagesResponce)
   .get("/group-sizes", groupSizesResponce);
 
