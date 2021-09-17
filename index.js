@@ -21,6 +21,8 @@ const {
   falilitiesListResponce,
 } = require("./controllers/selects");
 
+const { registerResponse, loginResponce } = require("./controllers/auth");
+
 const Koa = require("koa");
 const app = (module.exports = new Koa());
 
@@ -41,8 +43,10 @@ app.use(koaBody());
 
 router
   .get("/", listResponse)
-  .post("/auth", authResponse)
+  //auth
+  .post("/login", authResponse)
   .post("/register", registerResponse)
+  // user
   .get("/user/:id", getUserResponse)
   .get("/users", getUsersResponse)
   .put("/user/:id", putUserResponse)
@@ -79,16 +83,6 @@ let users = [
   { id: 0, firts_name: "John", last_name: "Gold", data: "10.10.2021" },
   { id: 1, firts_name: "Jack", last_name: "Daniels", data: "10.10.2021" },
 ];
-
-//auth
-
-async function registerResponse(ctx) {
-  ctx.body = users;
-}
-
-async function authResponse(ctx) {
-  ctx.body = users;
-}
 
 // user/
 
