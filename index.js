@@ -1,7 +1,6 @@
 const logger = require("koa-logger");
 const router = require("@koa/router")();
 const koaBody = require("koa-body");
-const cities = require("./responses/cities.json");
 const offers = require("./responses/offers.json");
 const featuredOffers = require("./responses/offers.json");
 const notifications = require("./responses/notifications.json");
@@ -18,8 +17,8 @@ const facilities = require("./responses/facilities.json");
 const {
   groupLanguagesResponce,
   groupSizesResponce,
+  citiesResponce,
 } = require("./controllers/selects");
-console.log(groupLanguagesResponce);
 
 const Koa = require("koa");
 const app = (module.exports = new Koa());
@@ -51,7 +50,6 @@ router
   .get("/notifications", notificationsResponse)
   .get("/history-visits", historyResponse)
   .get("/upcoming-visits", upcomingResponse)
-  .get("/cities", citiesResponse)
   .get("/posts", listResponse)
   .get("/posts", listResponse)
   .get("/featured-offers", featuredOffersResponse)
@@ -65,6 +63,7 @@ router
   .get("/external-data", extternalResponse)
   .get("/facilities", facilitiesResponse)
   // selects
+  .get("/cities", citiesResponce)
   .get("/group-languages", groupLanguagesResponce)
   .get("/group-sizes", groupSizesResponce);
 
@@ -132,9 +131,6 @@ async function historyResponse(ctx) {
 }
 async function upcomingResponse(ctx) {
   ctx.body = upcoming;
-}
-async function citiesResponse(ctx) {
-  ctx.body = cities;
 }
 async function languagesResponse(ctx) {
   ctx.body = languages;
