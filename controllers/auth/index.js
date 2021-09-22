@@ -36,6 +36,18 @@ module.exports = {
     ctx.body = user;
   },
   loginResponce: async function (ctx) {
-    ctx.body = users.find((i) => i.email === ctx.request.body.email);
+    console.log(ctx.request.body.email);
+    const user = users.find((i) => i.email === ctx.request.body.email);
+    if (user) {
+      ctx.body = user;
+    } else {
+      ctx.status = 426;
+      ctx.body = {
+        email: "User with this email not found",
+      };
+    }
+  },
+  logoutResponce: async function (ctx) {
+    ctx.body = {};
   },
 };

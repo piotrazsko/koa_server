@@ -21,7 +21,11 @@ const {
   falilitiesListResponce,
 } = require("./controllers/selects");
 
-const { registerResponse, loginResponce } = require("./controllers/auth");
+const {
+  registerResponse,
+  loginResponce,
+  logoutResponce,
+} = require("./controllers/auth");
 
 const Koa = require("koa");
 const app = (module.exports = new Koa());
@@ -44,14 +48,16 @@ app.use(koaBody());
 router
   .get("/", listResponse)
   //auth
-  .post("/login", authResponse)
+  .post("/login", loginResponce)
   .post("/register", registerResponse)
+  .get("/logout", logoutResponce)
   // user
   .get("/user/:id", getUserResponse)
   .get("/users", getUsersResponse)
   .put("/user/:id", putUserResponse)
   .delete("/user/:id", deleteUserResponse)
   .post("/user", postUserResponse)
+  //notifications
   .get("/notifications", notificationsResponse)
   .get("/history-visits", historyResponse)
   .get("/upcoming-visits", upcomingResponse)
