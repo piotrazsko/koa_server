@@ -25,6 +25,7 @@ const {
   registerResponse,
   loginResponce,
   logoutResponce,
+  resetPasswordResponse,
 } = require("./controllers/auth");
 
 const Koa = require("koa");
@@ -77,7 +78,8 @@ router
   .get("/cities", citiesResponce)
   .get("/facilities-list", falilitiesListResponce)
   .get("/group-languages", groupLanguagesResponce)
-  .get("/group-sizes", groupSizesResponce);
+  .get("/group-sizes", groupSizesResponce)
+  .post("/reset-password", resetPasswordResponse);
 
 app.use(router.routes());
 

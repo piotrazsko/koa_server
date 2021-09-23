@@ -35,6 +35,22 @@ module.exports = {
     users.push(user);
     ctx.body = user;
   },
+  resetPasswordResponse: async function (ctx) {
+    const data = {
+      ...ctx.request.body,
+    };
+    const reg = /^\S+@\S+\.\S+$/;
+    console.log(data);
+    if (reg.test(data.email)) {
+      ctx.body = { message: "We send you email with instructions" };
+    } else {
+      ctx.status = 426;
+      ctx.body = {
+        message: "Wrong email",
+      };
+    }
+  },
+
   loginResponce: async function (ctx) {
     console.log(ctx.request.body.email);
     const user = users.find((i) => i.email === ctx.request.body.email);
