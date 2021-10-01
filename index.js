@@ -20,12 +20,15 @@ const {
   citiesResponce,
   falilitiesListResponce,
 } = require("./controllers/selects");
+const { translatesResponse } = require("./controllers/translates");
 
 const {
   registerResponse,
   loginResponce,
   logoutResponce,
   resetPasswordResponse,
+  updateUserResponse,
+  changePasswordResponse,
 } = require("./controllers/auth");
 
 const Koa = require("koa");
@@ -79,7 +82,11 @@ router
   .get("/facilities-list", falilitiesListResponce)
   .get("/group-languages", groupLanguagesResponce)
   .get("/group-sizes", groupSizesResponce)
-  .post("/reset-password", resetPasswordResponse);
+  .post("/reset-password", resetPasswordResponse)
+  .post("/change-password", changePasswordResponse)
+  .patch("/update-user", updateUserResponse)
+  //translates
+  .get("/translations", translatesResponse);
 
 app.use(router.routes());
 
@@ -125,6 +132,7 @@ async function deleteUserResponse(ctx) {
 }
 
 async function listResponse(ctx) {
+  console.log(ctx.request);
   ctx.body = { message: "Covid 19: update for visitors" };
 }
 async function notificationsResponse(ctx) {
@@ -156,7 +164,6 @@ async function facilitiesResponse(ctx) {
 }
 
 async function bookVisitResponse(ctx) {
-  console.log(ctx, ctx.params);
   ctx.body = {
     status: "confirmed",
   };

@@ -1,0 +1,97 @@
+{
+    "button": {
+        "create_account": "Konto erstellen",
+        "forgot_password": "Passwort vergessen?",
+        "login": "Anmelden",
+        "home_search_offers": "Durchsuchen Sie unsere Angebote",
+        "button_get_ticket": "Fahrkarte",
+        "continue_visit": "Besuch fortsetzen",
+        "cancel": "Abbrechen",
+        "ok": "OKAY",
+        "confirm": "Bestätigen",
+        "edit_visit": "Besuch bearbeiten",
+        "delete_visit": "Besuch löschen",
+        "cancel_visit": "Besuch abbrechen",
+        "book": "Buch",
+        "next": "Nächster",
+        "save": "Retten",
+        "no_show": "Nichterscheinen",
+        "book_a_vists": "Book a visit"
+    },
+
+    "navbar": {
+        "search": "Suchen",
+        "profile": "Profil",
+        "more": "Mehr",
+        "visits": "Besuche",
+        "offer_book_details": "Details",
+        "offer_book_visits": "Buchen Sie einen Besuch",
+        "bookmarks": "Lesezeichen"
+    },
+
+    "title": {
+        "title_visiting": "Besuchend",
+        "txt_home_title": "Europäisches Parlament",
+        "our_offers": "Unsere Angebote",
+        "notifications": "Benachrichtigungen",
+        "edit_visit": "Besuch bearbeiten",
+        "edit_visit_details": "Details bearbeiten",
+        "details": "Meine Daten",
+        "languages": "Sprachversion",
+        "facilities": "Einrichtungen",
+        "button_book_a_vists": "Buchen Sie einen Besuch",
+        "offer_book_visits": "Buchen Sie einen Besuch"
+    },
+    "tab": {
+        "upcoming": "Kommend",
+        "history": "Geschichte"
+    },
+    "text": {
+        "receive_info": "Ich bin damit einverstanden, Informationen über Neuigkeiten, Veranstaltungen und Besuche im Europäischen Parlament zu erhalten.",
+        "confirm_privacy": "Ich stimme der Datenschutzerklärung zu",
+        "all": "Alle",
+        "additional_information": "Zusätzliche Informationen",
+        "book_bus": "Parkinformationen per E-Mail versenden",
+        "book_car": "Informationen zum Busparkplatz per E-Mail versenden",
+        "group_size": "Gruppengröße {{size}} p",
+        "group_language": "Gruppensprache: {{code}} - {{lang}}",
+        "pending_status_text_1": "Sobald der Besuch genehmigt ist, werden wir Sie darüber informieren",
+        "confirm_status_text_1": "Besuchsdetails und Ticket wurden an Ihre E-Mail-Adresse gesendet",
+        "pending_status_text_2": "Sie können Ihre Besuche über das Anwendungsmenü der Registerkarte \"Besuche\" verwalten",
+        "confirm_status_text_2": "Sie können die Tickets auch herunterladen und Ihre Besuche über die Registerkarte \"Besuche\" im App-Menü verwalten.",
+        "featured_offers": "Empfohlene Angebote",
+        "register_text": "Wenn Sie kein Konto haben, bitte",
+        "register_text_2": "Registrieren",
+        "agreement": "Indem Sie fortfahren, stimmen Sie unseren",
+        "terms_and_use": "Terms & Use and Privacy Policy"
+    },
+    "input": {
+        "confirm_password": "Passwort bestätigen",
+        "password": "Passwort",
+        "email": "E-Mail",
+        "contact_phone": "Telefon kontaktieren",
+        "register_prefered_language": "Bevorzugte Sprache",
+        "last_name": "Nachname",
+        "first_name": "Vorname",
+        "city": "Stadt",
+        "facility": "Leichtigkeit",
+        "date_time": "Datum, Uhrzeit",
+        "group_size": "Gruppengröße",
+        "group_language": "Gruppensprache",
+        "book_aditianal_1": "Geben Sie zusätzliche Informationen oder Anforderungen ein (falls erforderlich)",
+        "book_aditianal_2": "Geben Sie Ihre Erwartungen für den Besuch ein (wenn Sie möchten)",
+        "desired_time": "Gewünschte Zeit"
+    },
+    "tap": {
+        "languages": "Sprachversion",
+        "notifications": "Benachrichtigungen",
+        "about_aplications": "Über Application",
+        "privacy_policy": "Datenschutzrichtlinie",
+        "term_of_use": "Nutzungsbedingungen",
+        "support_link": "Support-Link",
+        "facilities": "Einrichtungen",
+        "my_details": "Meine Daten",
+        "bookmarks": "Lesezeichen",
+        "visits": "Visits"
+    }
+}

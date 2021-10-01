@@ -11,18 +11,20 @@ let users = [
   {
     id: 0,
     email: "test@test.com",
-    firts_name: "John",
+    first_name: "John",
     last_name: "Gold",
     data: "10.10.2021",
     hash: "CEC6A5B064436B39D473772B5BF5985D8B02D5D64EF853AC66CD4A6683D605EC",
+    contact_phone: "+375256666666",
   },
   {
     email: "test@test.ru",
     id: 1,
-    firts_name: "Jack",
+    first_name: "Jack",
     last_name: "Daniels",
     data: "10.10.2021",
     hash: "0B1E5B9806824E71F045D07C03DB1E9959F560FC3ED7E117EC2FD05E0E334EBD",
+    contact_phone: "+375256666666",
   },
 ];
 
@@ -35,11 +37,35 @@ module.exports = {
     users.push(user);
     ctx.body = user;
   },
-  resetPasswordResponse: async function (ctx) {
+
+  updateUserResponse: async function (ctx) {
+    const user = {
+      ...ctx.request.body,
+    };
+
+    ctx.body = user;
+  },
+  changePasswordResponse: async function (ctx) {
+    ctx.status = 201;
     const data = {
       ...ctx.request.body,
     };
     const reg = /^\S+@\S+\.\S+$/;
+    if (reg.test(data.email)) {
+      ctx.body = { message: "We send you email with instructions" };
+    } else {
+      ctx.status = 426;
+      ctx.body = {
+        message: "Wrong email",
+      };
+    }
+  },
+
+  resetPasswordResponse: async function (ctx) {
+    const data = {
+      ...ctx.request.body,
+    };
+
     console.log(data);
     if (reg.test(data.email)) {
       ctx.body = { message: "We send you email with instructions" };
