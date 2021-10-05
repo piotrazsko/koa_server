@@ -4,8 +4,6 @@ const koaBody = require("koa-body");
 const offers = require("./responses/offers.json");
 const featuredOffers = require("./responses/offers.json");
 const notifications = require("./responses/notifications.json");
-const history = require("./responses/history.json");
-const upcoming = require("./responses/upcoming.json");
 
 //more
 const languages = require("./responses/languages.json");
@@ -20,7 +18,14 @@ const {
   citiesResponce,
   falilitiesListResponce,
 } = require("./controllers/selects");
+
 const { translatesResponse } = require("./controllers/translates");
+
+const {
+  historyResponse,
+  upcomingResponse,
+  deleteVisitsResponse,
+} = require("./controllers/visits");
 
 const {
   registerResponse,
@@ -61,11 +66,12 @@ router
   .put("/user/:id", putUserResponse)
   .delete("/user/:id", deleteUserResponse)
   .post("/user", postUserResponse)
+  //visits
+  .get("/history-visits", historyResponse)
+  .delete("/delete-visits/:id", deleteVisitsResponse)
+  .get("/upcoming-visits", upcomingResponse)
   //notifications
   .get("/notifications", notificationsResponse)
-  .get("/history-visits", historyResponse)
-  .get("/upcoming-visits", upcomingResponse)
-  .get("/posts", listResponse)
   .get("/posts", listResponse)
   .get("/featured-offers", featuredOffersResponse)
   .get("/offers", offersResponse)
@@ -138,12 +144,7 @@ async function listResponse(ctx) {
 async function notificationsResponse(ctx) {
   ctx.body = notifications;
 }
-async function historyResponse(ctx) {
-  ctx.body = history;
-}
-async function upcomingResponse(ctx) {
-  ctx.body = upcoming;
-}
+
 async function languagesResponse(ctx) {
   ctx.body = languages;
 }
