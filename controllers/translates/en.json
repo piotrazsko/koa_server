@@ -12,6 +12,7 @@
     "confirm": "Confirm",
     "edit_visit": "Edit visit",
     "delete_visit": "Delete visit",
+    "delete_visit_history": "Delete from the History",
     "cancel_visit": "Cancel visit",
     "book": "Book",
     "next": "Next",
@@ -79,7 +80,8 @@
     "change_password": "Change password",
     "save_changes": "Do you want to save the changes you made?",
     "delete_visit_text": "Are you sure you want to delete this visit?",
-    "cancel_visit_text": "Are you sure you want to cancel this visit?"
+    "cancel_visit_text": "Are you sure you want to cancel this visit?",
+    "feedback_alert_text": "You can rate this visit and leave your feedback"
   },
   "input": {
     "confirm_password": "Confirm password",

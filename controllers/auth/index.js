@@ -66,7 +66,7 @@ module.exports = {
       ...ctx.request.body,
     };
 
-    console.log(data);
+    const reg = /^\S+@\S+\.\S+$/;
     if (reg.test(data.email)) {
       ctx.body = { message: "We send you email with instructions" };
     } else {

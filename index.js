@@ -25,6 +25,7 @@ const {
   historyResponse,
   upcomingResponse,
   deleteVisitsResponse,
+  setVisitsFeedbackResponse,
 } = require("./controllers/visits");
 
 const {
@@ -70,6 +71,7 @@ router
   .get("/history-visits", historyResponse)
   .delete("/delete-visits/:id", deleteVisitsResponse)
   .get("/upcoming-visits", upcomingResponse)
+  .put("/set-feedback", setVisitsFeedbackResponse)
   //notifications
   .get("/notifications", notificationsResponse)
   .get("/posts", listResponse)

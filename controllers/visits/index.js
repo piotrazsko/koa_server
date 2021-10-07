@@ -11,4 +11,8 @@ module.exports = {
   deleteVisitsResponse: async function (ctx) {
     ctx.body = { message: "success" };
   },
+  setVisitsFeedbackResponse: async function (ctx) {
+    console.log(ctx.request.body);
+    ctx.body = { message: "success" };
+  },
 };
