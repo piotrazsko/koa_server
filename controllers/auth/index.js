@@ -92,4 +92,10 @@ module.exports = {
   logoutResponce: async function (ctx) {
     ctx.body = {};
   },
+  deviceFirebaseResponce: async function (ctx) {
+    const data = {
+      ...ctx.request.body,
+    };
+    console.log(data);
+  },
 };

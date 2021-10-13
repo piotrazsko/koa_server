@@ -35,6 +35,7 @@ const {
   resetPasswordResponse,
   updateUserResponse,
   changePasswordResponse,
+  deviceFirebaseResponce,
 } = require("./controllers/auth");
 
 const Koa = require("koa");
@@ -61,6 +62,7 @@ router
   .post("/login", loginResponce)
   .post("/register", registerResponse)
   .get("/logout", logoutResponce)
+  .post("/register-device", deviceFirebaseResponce)
   // user
   .get("/user/:id", getUserResponse)
   .get("/users", getUsersResponse)
