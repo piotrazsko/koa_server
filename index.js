@@ -196,4 +196,4 @@ async function featuredOffersResponse(ctx) {
   ctx.body = featuredOffers;
 }
 
-if (!module.parent) app.listen(3000);
+if (!module.parent) app.listen(3001);
