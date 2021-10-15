@@ -136,6 +136,7 @@ module.exports = {
     const data = {
       ...ctx.request.body,
     };
+    console.log(data.token);
     sendNotification(data.token);
   },
 };
