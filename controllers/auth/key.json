@@ -1,0 +1,14 @@
+{
+  "type": "service_account",
+  "project_id": "europeanvisitong",
+  "private_key_id": "90c6fa8e117cc0b5acd7b3c4795ba351e47023db",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCdmSdlfARNcufk\nOZiE5chuT6qbZCU0B7n8aj9W0vlZhnrf76VHQDrCjRmxWX6lwg/wv8FO7rhpYxRs\nKycesKny2SKGYIC8Y+vCjUvGrX3DkWJJp0M7ywslzXvb7YcaalMoJgQjKQ+QMtg4\nHblcLyWiwXqbNRP4YPzrQpjR2VhVu1L2dGGHb5H53B7E6CMM2z+OsTTvScXuM2Pg\nek7ij0tvnCHXeFJgsqK2mjAUbSLoV5B8IFfkuWXXFavMh9yTuQVRHkDNigEXiKB5\ny5I52CvqmzFv70rFS3ZfzSn4OS/95eruLvEEqdaPO1kNN3h4+e8bNKWIdMYWQSCm\n/6+POxfbAgMBAAECggEAOC9kTLlwfT4Ubxibh/G1yaIMVFbZLpn8lAE68JTJgcHA\nZ7qzpVnAOSD9wm0CCk1LyoxKef4Ab837d27RBQ99n08LEHYyHzfOUu91zvCGMCVS\nMaj4fsYuBL2jxS4C5wd1+w/GlNRsMH/39tWeAj/qvoIU2GWNZ5UIRkVZXyMJ65IM\nUj4UaHpEIRa9rgkHdIN0EPg12Rkmi62gXmmsPMokQaOu45ZDIbqtlOFFITp5fjOg\nlGOXeAs+w5MX8lcDqfYoEQyuossYo17sEx+lOcQJw/9RMa7RR+9IOVgc0ZsXqeVQ\n9YjrXS52DrFnk6aGjX6HwMJRYM0zcEfsMbhDfyruHQKBgQDKNIpyZWTnmnHmQLBu\nlUjChB47nGY5veKE2Ct6Q+sQfB4AYHPM3EkFvWbDeF84yZgZk4uJImMom+X0wmJC\nhOLyw5zANBKcIxZHjRAEsQxmTlyTBt/p4e+lgXP9wW5uqsN7dm8//N+nYJ0YaM1S\nDUUb8Om6tj9jpcGlGy5Bfrr93wKBgQDHhphFf9A/ikNMnoGR/bY2Uk+Jb2Myunfd\nrcm1lyjLx8rM8lyzDcN2AUWtnFwo+MlqaBmcbBDzVcezsWy3gS2EsWGT46FgRW17\nr0YILiGQMhEfxCvRNXwPW/bbCcm3gIoo1LlX2ht7KQk+Hbi/FN4MDiCfXxAOvZ5v\nkZ7DaysthQKBgEXcn1Tk6VcHyoCGKy8Zzvi90wA/iiY7D+9cDLGCk82vRGJW8Mt/\n9I7SIJY6mZOyOyXjD1vDEMVwD6RgILjg1tSPdzIFC8T8bm8sMrOcRC94tY1q26Qg\nFr91GZE76p67yyx1//v4r4FR5RUQ6JeH1C/SLb7/xqj0FRKpcHLaiVq7AoGAKb4n\n90pROCnmAI6czv1EdMLtrvQlzcQjNbaZH6ubNl77N7tw12kGvpZvjG3M/ilmgiN7\nUDVvqmkE2bxB4XZeHoe5wWX7Khf8WscFoMp97Rv8Zyf0ftVwugnkcFjw4bo7rWUr\nzYxs+WxRabRwJVHpTp5aBt2tj1fuYKsXiwzNwL0CgYARKGD5ZWZnSBqG8byFY91j\n3Q1AleAlt+vEg/wyTNen4Yi1CzLNeHq5b97Jsk12GwZU1f2ICYm0Q1z6sGYdnKyG\npHZd7KnFPcPy483Lwot/o8n3tYH9Fd7LnKwEaBk2VrirJ6LiSNyQdOHXQhZJYi6k\nvHpdc+fgHwaSVOPL4Zx0hg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ouu12@europeanvisitong.iam.gserviceaccount.com",
+  "client_id": "110844940278782864115",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ouu12%40europeanvisitong.iam.gserviceaccount.com",
+  "server_key": "AAAAnuCGfRg:APA91bE6TFpGGhkke8MEPSg-zBUjpI8mU1hRIDyI_c2UpIxN5-3cqasyXpv7NcsL_zxexm1oW2-1pyw7Qr6I_u5PlBqq_mSI-_1PnkKF6Y0pTD3_KX1mgNfYfR9K1lVnxoYg7oZJ0rnn",
+  "server_id": "682371743000"
+}
