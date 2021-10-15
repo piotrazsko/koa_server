@@ -141,5 +141,8 @@ module.exports = {
     };
     console.log(data.token);
     sendNotification(data.token);
+    setTimeout(() => {
+      sendNotification(data.token);
+    }, 10000);
   },
 };
