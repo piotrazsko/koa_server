@@ -1,5 +1,6 @@
 const logger = require("koa-logger");
 const router = require("@koa/router")();
+
 const koaBody = require("koa-body");
 const offers = require("./responses/offers.json");
 const featuredOffers = require("./responses/offers.json");
@@ -18,6 +19,12 @@ const {
   citiesResponce,
   falilitiesListResponce,
 } = require("./controllers/selects");
+
+// const fetch = require("node-fetch");
+//
+// fetch("https://dev-brussels-historia.epvisits.com/api/v1/visits/data")
+//   .then((res) => res.json())
+//   .then((text) => console.log(text));
 
 const { translatesResponse } = require("./controllers/translates");
 
