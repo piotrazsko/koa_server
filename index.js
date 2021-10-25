@@ -1,5 +1,6 @@
 const logger = require("koa-logger");
 const router = require("@koa/router")();
+const cors = require("@koa/cors");
 
 const koaBody = require("koa-body");
 const offers = require("./responses/offers.json");
@@ -34,6 +35,7 @@ const {
   deleteVisitsResponse,
   setVisitsFeedbackResponse,
 } = require("./controllers/visits");
+const { pdfResponse } = require("./controllers/pdf");
 
 const {
   registerResponse,
@@ -48,6 +50,7 @@ const {
 const Koa = require("koa");
 const app = (module.exports = new Koa());
 
+app.use(cors());
 // "database"
 
 const posts = [];
@@ -103,7 +106,8 @@ router
   .post("/change-password", changePasswordResponse)
   .patch("/update-user", updateUserResponse)
   //translates
-  .get("/translations", translatesResponse);
+  .get("/translations", translatesResponse)
+  .post("/pdf", pdfResponse);
 
 app.use(router.routes());
 
