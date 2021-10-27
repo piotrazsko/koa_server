@@ -2,12 +2,29 @@ const puppeteer = require("puppeteer");
 var fs = require("fs");
 
 async function printPDF(url) {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    deviceScaleFactor: 2,
+    ignoreHTTPSErrors: true,
+    args: [`--window-size=1920,1080`],
+    defaultViewport: {
+      width: 1920,
+      height: 1080,
+    },
+  });
   const page = await browser.newPage();
-  console.log(url);
   await page.goto(url, { waitUntil: "load" });
-  const pdf = await page.pdf({ format: "A4" });
-
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 200);
+  });
+  const pdf = await page.pdf({
+    format: "A4",
+    scale: 0.6,
+    margin: { top: 10, bottom: 10, left: 5, right: 5 },
+  });
+  console.log(page.viewport());
   await browser.close();
   return pdf;
 }
@@ -18,7 +35,7 @@ module.exports = {
       ...ctx.request.body,
     };
     const pdf = await printPDF(data.url);
-    console.log(pdf);
+    // console.log(pdf);
     ctx.set({
       "Content-Type": "application/pdf",
       "Content-Length": pdf.length,
