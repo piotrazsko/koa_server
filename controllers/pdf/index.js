@@ -22,7 +22,7 @@ async function printPDF(url) {
   const pdf = await page.pdf({
     format: "A4",
     scale: 0.6,
-    margin: { top: 10, bottom: 10, left: 5, right: 5 },
+    margin: { top: 15, bottom: 15, left: 5, right: 5 },
   });
   console.log(page.viewport());
   await browser.close();
