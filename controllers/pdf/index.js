@@ -35,6 +35,7 @@ module.exports = {
     const data = {
       ...ctx.request.body,
     };
+    console.log(data);
     const pdf = await printPDF(data.url);
     // console.log(pdf);
     ctx.set({
