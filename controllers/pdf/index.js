@@ -24,6 +24,7 @@ async function printPDF(url) {
     format: "A4",
     scale: 0.6,
     margin: { top: 0, bottom: 10, left: 25, right: 5 },
+    printBackground: true,
   });
   console.log(page.viewport());
   await browser.close();
