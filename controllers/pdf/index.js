@@ -14,15 +14,16 @@ async function printPDF(url) {
   });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "load" });
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, 200);
-  });
+  // await new Promise((resolve) => {
+  //   setTimeout(() => {
+  //     console.log(2);
+  //     resolve();
+  //   }, 200);
+  // });
   const pdf = await page.pdf({
     format: "A4",
     scale: 0.6,
-    margin: { top: 15, bottom: 15, left: 5, right: 5 },
+    margin: { top: 0, bottom: 10, left: 25, right: 5 },
   });
   console.log(page.viewport());
   await browser.close();
