@@ -126,7 +126,7 @@
     "email_invalid": "email is invalid",
     "email_required": "email is a required field",
     "password_required": "password is a required field",
-    "password_min_length": "Password must be at least ${min} characters",
+    "password_min_length": "Password must be at least {{min_length}} characters",
     "pusswords_must_match": "Passwords must match"
   }
 }
