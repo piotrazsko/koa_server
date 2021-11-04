@@ -114,5 +114,19 @@
     "logout": "Log out",
     "visits": "Visits",
     "covid_message": "Covid 19: update for visitors"
+  },
+  "error": {
+    "select_date_reuired": "Date is a required field",
+    "select_group_language_required": "Group language is a required field",
+    "select_group_size_reuired": "Group size is a required field",
+    "first_name_required": "firstname is a required field",
+    "last_name_required": "lastname is a required field",
+    "phone_invalid": "phone is invalid",
+    "phone_required": "phone is a required field",
+    "email_invalid": "email is invalid",
+    "email_required": "email is a required field",
+    "password_required": "password is a required field",
+    "password_min_length": "Password must be at least ${min} characters",
+    "pusswords_must_match": "Passwords must match"
   }
 }
