@@ -21,6 +21,9 @@ const {
   falilitiesListResponce,
 } = require("./controllers/selects");
 
+const initDB = require("./controllers/mongo");
+initDB();
+
 // const fetch = require("node-fetch");
 //
 // fetch("https://dev-brussels-historia.epvisits.com/api/v1/visits/data")
