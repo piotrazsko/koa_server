@@ -1,51 +1,6 @@
 const fs = require("fs");
-var admin = require("firebase-admin");
-var serviceAccount = require("./key.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL:
-    "https://europeanvisitong-default-rtdb.europe-west1.firebasedatabase.app",
-});
-
-function setUser(data) {
-  let rawdata = fs.readFileSync("user.json");
-  let users = JSON.parse(rawdata);
-  let savedData = JSON.stringify(data);
-  fs.writeFileSync("user.json", savedData);
-}
-
-function sendNotification(token) {
-  // This registration token comes from the client FCM SDKs.
-  const registrationToken = token.trim();
-
-  const message = {
-    notification: {
-      title: "$FooCorp up 1.43% on the day",
-      body:
-        "$FooCorp gained 11.80 points to close at 835.67, up 1.43% on the day.",
-    },
-
-    data: {
-      score: "850",
-      time: "2:45",
-    },
-    token: registrationToken,
-  };
-
-  // Send a message to the device corresponding to the provided
-  // registration token.
-  admin
-    .messaging()
-    .send(message)
-    .then((response) => {
-      // Response is a message ID string.
-      console.log("Successfully sent message:", response);
-    })
-    .catch((error) => {
-      console.log("Error sending message:", error);
-    });
-}
+const { createUserInDb } = require("../mongo/users.js");
 
 let users = [
   {
@@ -74,7 +29,9 @@ module.exports = {
       ...ctx.request.body,
       hash: "D135B5130CD6B446693ECB1CFE81E3721F66079F",
     };
-    users.push(user);
+    createUserInDb({ ...user });
+    // users.push(user);
+    console.log(user);
     ctx.body = user;
   },
 
@@ -131,18 +88,5 @@ module.exports = {
   },
   logoutResponce: async function (ctx) {
     ctx.body = {};
-  },
-  deviceFirebaseResponce: async function (ctx) {
-    const data = {
-      ...ctx.request.body,
-    };
-    ctx.body = {
-      message: "Success",
-    };
-    console.log(data.token);
-    sendNotification(data.token);
-    setTimeout(() => {
-      sendNotification(data.token);
-    }, 10000);
   },
 };

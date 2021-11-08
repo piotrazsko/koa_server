@@ -21,7 +21,7 @@ const {
   falilitiesListResponce,
 } = require("./controllers/selects");
 
-const initDB = require("./controllers/mongo");
+const { initDB } = require("./controllers/mongo");
 initDB();
 
 // const fetch = require("node-fetch");
@@ -47,8 +47,9 @@ const {
   resetPasswordResponse,
   updateUserResponse,
   changePasswordResponse,
-  deviceFirebaseResponce,
 } = require("./controllers/auth");
+
+const { deviceFirebaseResponce } = require("./controllers/firebase");
 
 const Koa = require("koa");
 const app = (module.exports = new Koa());
