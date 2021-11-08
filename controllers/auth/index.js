@@ -26,12 +26,20 @@ let users = [
 module.exports = {
   registerResponse: async function (ctx) {
     const { password } = ctx.request.body;
-    const user = {
-      ...ctx.request.body,
-      hash: SHA256(password),
-    };
-    createUserInDb({ ...user });
-    ctx.body = user;
+    const userData = await getUserFromDb(ctx.request.body.email);
+    if (userData) {
+      ctx.status = 426;
+      ctx.body = {
+        email: "User with this email exist",
+      };
+    } else {
+      const user = {
+        ...ctx.request.body,
+        hash: SHA256(password),
+      };
+      createUserInDb({ ...user });
+      ctx.body = user;
+    }
   },
 
   updateUserResponse: async function (ctx) {
