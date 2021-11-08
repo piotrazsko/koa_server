@@ -2,27 +2,6 @@ const fs = require("fs");
 const SHA256 = require("crypto-js/sha256");
 const { createUserInDb, getUserFromDb } = require("../mongo/users.js");
 
-let users = [
-  {
-    id: 0,
-    email: "test@test.com",
-    first_name: "John",
-    last_name: "Gold",
-    data: "10.10.2021",
-    hash: "CEC6A5B064436B39D473772B5BF5985D8B02D5D64EF853AC66CD4A6683D605EC",
-    contact_phone: "+375256666666",
-  },
-  {
-    email: "test@test.ru",
-    id: 1,
-    first_name: "Jack",
-    last_name: "Daniels",
-    data: "10.10.2021",
-    hash: "0B1E5B9806824E71F045D07C03DB1E9959F560FC3ED7E117EC2FD05E0E334EBD",
-    contact_phone: "+375256666666",
-  },
-];
-
 module.exports = {
   registerResponse: async function (ctx) {
     const { password } = ctx.request.body;

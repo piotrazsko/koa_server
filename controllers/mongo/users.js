@@ -23,7 +23,6 @@ const getUsersFromDb = async () => {
 };
 
 const createUserInDb = async (user) => {
-  console.log(user);
   var newUser = new User(user);
   newUser.save();
   return user;
