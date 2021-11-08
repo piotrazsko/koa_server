@@ -1,6 +1,6 @@
 const fs = require("fs");
-
-const { createUserInDb } = require("../mongo/users.js");
+const SHA256 = require("crypto-js/sha256");
+const { createUserInDb, getUserFromDb } = require("../mongo/users.js");
 
 let users = [
   {
@@ -25,13 +25,12 @@ let users = [
 
 module.exports = {
   registerResponse: async function (ctx) {
+    const { password } = ctx.request.body;
     const user = {
       ...ctx.request.body,
-      hash: "D135B5130CD6B446693ECB1CFE81E3721F66079F",
+      hash: SHA256(password),
     };
     createUserInDb({ ...user });
-    // users.push(user);
-    console.log(user);
     ctx.body = user;
   },
 
@@ -75,15 +74,19 @@ module.exports = {
   },
 
   loginResponce: async function (ctx) {
-    console.log(ctx.request.body.email);
-    const user = users.find((i) => i.email === ctx.request.body.email);
-    if (user) {
-      ctx.body = user;
-    } else {
+    const user = await getUserFromDb(ctx.request.body.email);
+    if (!user) {
       ctx.status = 426;
       ctx.body = {
         email: "User with this email not found",
       };
+    } else if (user.hash !== SHA256(ctx.request.body.password).toString()) {
+      ctx.status = 426;
+      ctx.body = {
+        email: "Check your password or email",
+      };
+    } else {
+      ctx.body = user;
     }
   },
   logoutResponce: async function (ctx) {
